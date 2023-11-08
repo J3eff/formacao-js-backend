@@ -2,11 +2,15 @@ const listaLivros = require('./array')
 const trocaLugar = require('./encontraMenores')
 
 function quickSort(array, esqueda, direita) {
-
     if (array.length > 1) {
         let indiceAtual = particiona(array, esqueda, direita);
-    }
 
+        if (esqueda < indiceAtual - 1)
+            quickSort(array, esqueda, indiceAtual - 1);
+
+        if (indiceAtual < direita)
+            quickSort(array, indiceAtual, direita)
+    }
 
     return array;
 }
@@ -21,11 +25,11 @@ function particiona(array, esqueda, direita) {
             atualEsquerda++;
         }
 
-        while (array[atualDireita].preco < pivo.preco) {
+        while (array[atualDireita].preco > pivo.preco) {
             atualDireita--;
         }
 
-        if (atualEsquerda <= atualDireita){
+        if (atualEsquerda <= atualDireita) {
             trocaLugar(array, atualEsquerda, atualDireita);
             atualEsquerda++;
             atualDireita--;
