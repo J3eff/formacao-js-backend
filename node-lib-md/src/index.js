@@ -25,5 +25,4 @@ async function pegaArquivo(caminhoDoArquivo) {
     }
 }
 
-pegaArquivo('./arquivos/texto.md')
-pegaArquivo('./arquivos/')
+export default pegaArquivo;
