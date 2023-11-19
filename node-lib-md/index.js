@@ -6,7 +6,6 @@ function trataErro(erro) {
 }
 
 // async/await
-
 async function pegaArquivo(caminhoDoArquivo) {
     try {
         const encoding = 'utf-8';
@@ -29,3 +28,5 @@ async function pegaArquivo(caminhoDoArquivo) {
 
 pegaArquivo('./arquivos/texto.md')
 pegaArquivo('./arquivos/')
+
+//\[[^[\]]*?\]
