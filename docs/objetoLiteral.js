@@ -1,3 +1,4 @@
+//herança de protótipo
 const user = {
     nome: "Juliana",
     email: "j@j.com",
@@ -9,4 +10,15 @@ const user = {
     }
 }
 
-//herança de protótipo
+//user.exibirInfos();
+//const exibir = user.exibirInfos
+//exibir();
+
+const exibir = function(){
+    console.log(this.nome)
+}
+
+// bind -> Prende a execução de uma função ao contexto especifico
+const exibirNome = exibir.bind(user)
+exibirNome();
+exibir();
